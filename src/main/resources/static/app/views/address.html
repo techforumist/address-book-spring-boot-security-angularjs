@@ -33,7 +33,7 @@
 			<div class="panel-heading">
 				Addresss
 				<button type="button" class="btn btn-default btn-sm"
-					ng-click="addAddress()">
+					ng-click="initAddAddress()">
 					<span class="glyphicon glyphicon-plus"></span> New Address
 				</button>
 			</div>
@@ -55,7 +55,7 @@
 							<td>{{address.name}}</td>
 							<td>{{address.address}}</td>
 							<td><button type="button" class="btn btn-default btn-sm"
-									ng-click="edit(address)">
+									ng-click="initEdit(address)">
 									<span class="glyphicon glyphicon-edit"></span>
 								</button></td>
 							<td>

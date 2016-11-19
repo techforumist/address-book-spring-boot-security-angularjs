@@ -16,13 +16,13 @@ angular.module('AddressBook')
 			$scope.message = error.message;
 		});
 	};
-	$scope.edit = function(appUser) {
+	$scope.initEdit = function(appUser) {
 		edit = true;
 		$scope.appUser = appUser;
 		$scope.message='';
 		$scope.buttonText = 'Update';
 	};
-	$scope.addUser = function() {
+	$scope.initAddUser = function() {
 		edit = false;
 		$scope.appUser = null;
 		$scope.userForm.$setPristine();

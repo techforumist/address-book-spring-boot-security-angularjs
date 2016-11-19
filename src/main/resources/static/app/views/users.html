@@ -50,7 +50,7 @@
 			<div class="panel-heading">
 				Users
 				<button type="button" class="btn btn-default btn-sm"
-					ng-click="addUser()">
+					ng-click="initAddUser()">
 					<span class="glyphicon glyphicon-plus"></span> New User
 				</button>
 			</div>
@@ -75,7 +75,7 @@
 							<td>{{user.username}}</td>
 							<td>{{user.role}}</td>
 							<td><button type="button" class="btn btn-default btn-sm"
-									ng-click="edit(user)">
+									ng-click="initEdit(user)">
 									<span class="glyphicon glyphicon-edit"></span>
 								</button></td>
 							<td>
@@ -90,5 +90,4 @@
 			</div>
 		</div>
 	</div>
-
 </div>

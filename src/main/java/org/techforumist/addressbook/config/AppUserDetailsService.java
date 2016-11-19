@@ -9,6 +9,8 @@ import org.techforumist.addressbook.domain.AppUser;
 import org.techforumist.addressbook.repository.AppUserRepository;
 
 /**
+ * This Service class for providing the user credentials from the database.
+ * 
  * @author Sarath Muraleedharan
  *
  */

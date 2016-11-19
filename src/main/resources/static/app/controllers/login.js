@@ -4,7 +4,7 @@ angular.module('AddressBook')
 
 	// method for login
 	$scope.login = function() {
-		// creating base64 encoded String from username and password
+		// creating base64 encoded String from user name and password
 		var base64Credential = btoa($scope.username + ':' + $scope.password);
 
 		// calling GET request for getting the user details

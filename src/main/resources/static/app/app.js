@@ -1,4 +1,4 @@
-// Creating angular Application with module name "SecurityTestApp"
+// Creating angular Application with module name "AddressBook"
 angular.module('AddressBook', [ 'ui.router' ])
 
 // If we implement the basic security in spring boot then the response will
@@ -7,15 +7,24 @@ angular.module('AddressBook', [ 'ui.router' ])
 // every request we are making using AngularJs.
 .config([ '$httpProvider', function($httpProvider) {
 	$httpProvider.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
-} ]).run(function(AuthService, $rootScope, $state) {
+} ])
+// the following method will run at the time of initializing the module. That
+// means it will run only one time.
+.run(function(AuthService, $rootScope, $state) {
+	// For implementing the authentication with ui-router we need to listen the
+	// state change. For every state change the ui-router module will broadcast
+	// the '$stateChangeStart'.
 	$rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
+		// checking the user is logged in or not
 		if (!AuthService.user) {
+			// To avoiding the infinite looping of state change we have to add a
+			// if condition.
 			if (toState.name != 'login' && toState.name != 'register') {
-				AuthService.isInLoginPage = true;
 				event.preventDefault();
 				$state.go('login');
 			}
 		} else {
+			// checking the user is authorized to view the states
 			if (toState.data && toState.data.role) {
 				if (toState.data.role != AuthService.user.principal.role) {
 					event.preventDefault();

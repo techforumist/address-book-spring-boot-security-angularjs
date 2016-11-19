@@ -15,14 +15,14 @@ angular.module('AddressBook')
 			$scope.message = error.message;
 		});
 	};
-	$scope.edit = function(address) {
+	$scope.initEdit = function(address) {
 		edit = true;
 		$scope.address = address;
 		$scope.message='';
 		$scope.deleteMessage='';
 		$scope.buttonText = 'Update';
 	};
-	$scope.addAddress = function() {
+	$scope.initAddAddress = function() {
 		edit = false;
 		$scope.address = null;
 		$scope.addressForm.$setPristine();
@@ -67,7 +67,5 @@ angular.module('AddressBook')
 			addAddress();	
 		}
 	};
-
 	init();
-
 });
