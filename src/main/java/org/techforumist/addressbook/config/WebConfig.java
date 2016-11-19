@@ -9,6 +9,10 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
 
+/**
+ * @author Sarath Muraleedharan
+ *
+ */
 @Configurable
 @EnableWebSecurity
 // Modifying or overriding the default spring boot security.
@@ -41,7 +45,7 @@ public class WebConfig extends WebSecurityConfigurerAdapter {
 				// starts authorizing configurations
 				.authorizeRequests()
 				// ignore the "/" and "/index.html"
-				.antMatchers("/", "/index.html", "/app/**").permitAll()
+				.antMatchers("/", "/index.html", "/app/**", "/register", "/favicon.ico").permitAll()
 				// authenticate all remaining URLS
 				.anyRequest().fullyAuthenticated().and()
 				// enabling the basic authentication

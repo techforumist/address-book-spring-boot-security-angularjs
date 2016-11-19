@@ -7,14 +7,9 @@ angular.module('AddressBook')
 	$scope.$on('LogoutSuccessful', function() {
 		$scope.user = null;
 	});
-	if (!AuthService.user && !AuthService.isLoginPage) {
-		$state.go('login');
-		AuthService.isLoginPage = true;
-	}
 	$scope.logout = function() {
 		AuthService.user = null;
 		$rootScope.$broadcast('LogoutSuccessful');
 		$state.go('login');
 	};
-
 });

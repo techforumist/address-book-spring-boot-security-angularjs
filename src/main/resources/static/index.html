@@ -13,6 +13,11 @@
 .margin-top-5 {
 	margin-top: 10px;
 }
+
+.panel-scroll {
+	height: 300px;
+	overflow-y: auto;
+}
 </style>
 <body ng-app="AddressBook">
 
@@ -31,11 +36,13 @@
 		src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.js"></script>
 	<script type="text/javascript" src="app/app.js"></script>
 	<script type="text/javascript" src="app/route.js"></script>
+	<script type="text/javascript" src="app/services/auth-service.js"></script>
 	<script type="text/javascript" src="app/controllers/nav.js"></script>
 	<script type="text/javascript" src="app/controllers/login.js"></script>
-	<script type="text/javascript" src="app/controllers/home.js"></script>
 	<script type="text/javascript" src="app/controllers/users.js"></script>
 	<script type="text/javascript" src="app/controllers/address.js"></script>
-	<script type="text/javascript" src="app/services/auth-service.js"></script>
+	<script type="text/javascript" src="app/controllers/page-not-found.js"></script>
+	<script type="text/javascript" src="app/controllers/access-denied.js"></script>
+	<script type="text/javascript" src="app/controllers/register.js"></script>
 </body>
 </html>

@@ -8,6 +8,10 @@ import org.springframework.stereotype.Service;
 import org.techforumist.addressbook.domain.AppUser;
 import org.techforumist.addressbook.repository.AppUserRepository;
 
+/**
+ * @author Sarath Muraleedharan
+ *
+ */
 @Service
 public class AppUserDetailsService implements UserDetailsService {
 

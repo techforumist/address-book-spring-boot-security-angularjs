@@ -7,6 +7,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+/**
+ * @author Sarath Muraleedharan
+ *
+ */
 @Entity
 public class Address {
 
@@ -17,7 +21,7 @@ public class Address {
 	private String address;
 
 	@ManyToOne
-	@JoinColumn(name="owner")
+	@JoinColumn(name = "owner")
 	private AppUser owner;
 
 	public Long getId() {

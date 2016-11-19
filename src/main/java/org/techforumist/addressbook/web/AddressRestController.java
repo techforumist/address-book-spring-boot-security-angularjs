@@ -13,7 +13,12 @@ import org.springframework.web.bind.annotation.RestController;
 import org.techforumist.addressbook.domain.Address;
 import org.techforumist.addressbook.repository.AddressRepository;
 
+/**
+ * @author Sarath Muraleedharan
+ *
+ */
 @RestController
+@RequestMapping(value = "/api")
 public class AddressRestController {
 	@Autowired
 	private AddressRepository addressRepository;

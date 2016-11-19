@@ -1,1 +1,74 @@
-{{message}}
+<div class="row">
+	<div class="col-sm-6 ">
+		<div class="panel panel-default">
+			<div class="panel-heading">Address</div>
+			<div class="panel-body">
+				<div class="col-md-12">
+					<form ng-submit="submit()" name="addressForm" novalidate>
+
+						<div class="form-group"
+							ng-class="{ 'has-error': addressForm.name.$invalid && addressForm.name.$dirty }">
+							<label for="name">Name:</label> <input type="text" required
+								class="form-control" ng-model="address.name" id="name"
+								name="name">
+						</div>
+
+						<div class="form-group"
+							ng-class="{ 'has-error': addressForm.addressname.$invalid && addressForm.addressname.$dirty }">
+							<label for="address">Address:</label>
+							<textarea required class="form-control"
+								ng-model="address.address" id="address" name="address"></textarea>
+						</div>
+						<button type="submit" class="btn btn-default"
+							ng-disabled="addressForm.$invalid">{{buttonText}}</button>
+
+						<div class="alert alert-info margin-top-5" ng-show="message">{{message}}</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-6">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				Addresss
+				<button type="button" class="btn btn-default btn-sm"
+					ng-click="addAddress()">
+					<span class="glyphicon glyphicon-plus"></span> New Address
+				</button>
+			</div>
+			<div class="panel-body">
+				<div class="alert alert-info margin-top-5" ng-show="deleteMessage">{{deleteMessage}}</div>
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>Name</th>
+							<th>Address</th>
+							<th></th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="address in addressList">
+							<td>{{$index+1}}</td>
+							<td>{{address.name}}</td>
+							<td>{{address.address}}</td>
+							<td><button type="button" class="btn btn-default btn-sm"
+									ng-click="edit(address)">
+									<span class="glyphicon glyphicon-edit"></span>
+								</button></td>
+							<td>
+								<button type="button" class="btn btn-default btn-sm"
+									ng-click="deleteAddress(address)">
+									<span class="glyphicon glyphicon-trash"></span>
+								</button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+</div>

@@ -1,6 +1,6 @@
 angular.module('AddressBook')
 // Creating the Angular Controller
-.controller('LoginController', function($http, $scope,$state,AuthService,$rootScope) {
+.controller('LoginController', function($http, $scope, $state, AuthService, $rootScope) {
 
 	// method for login
 	$scope.login = function() {
@@ -21,9 +21,8 @@ angular.module('AddressBook')
 				// this application
 				$http.defaults.headers.common['Authorization'] = 'Basic ' + base64Credential;
 				AuthService.user = res;
-				
 				$rootScope.$broadcast('LoginSuccessful');
-				$state.go('home');
+				$state.go('address');
 			} else {
 				$scope.message = 'Authetication Failed !';
 			}
