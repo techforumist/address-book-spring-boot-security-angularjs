@@ -30,13 +30,4 @@ angular.module('AddressBook')
 			$scope.message = 'Authetication Failed !';
 		});
 	};
-	// method for logout
-	$scope.logout = function() {
-		// clearing the authorization header
-		$http.defaults.headers.common['Authorization'] = null;
-		// clearing all data
-		$scope.user = null;
-		$scope.message = 'Successfully logged out';
-		$scope.resource = null;
-	};
 });
