@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.techforumist.addressbook.domain.AppUser;
-import org.techforumist.addressbook.repository.AddressRepository;
 import org.techforumist.addressbook.repository.AppUserRepository;
 
 /**
@@ -19,8 +18,6 @@ import org.techforumist.addressbook.repository.AppUserRepository;
  */
 @RestController
 public class HomeRestController {
-	@Autowired
-	private AddressRepository addressRepository;
 	@Autowired
 	private AppUserRepository appUserRepository;
 
